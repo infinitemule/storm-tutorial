@@ -21,6 +21,9 @@ public class RickRollTopology {
     .shuffleGrouping("neverGonna");
     builder.setBolt ("runAroundAndDesertYou", new RunAroundAndDesertYouBolt())
     .shuffleGrouping("neverGonna");
+    builder.setBolt ("makeYouCry", new MakeYouCryBolt())    
+    .shuffleGrouping("neverGonna");
+    
     
     Config conf = new Config();
     conf.setDebug(true);
