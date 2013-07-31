@@ -14,24 +14,33 @@ public class RickRollTopology {
     
     TopologyBuilder builder = new TopologyBuilder();  
     
-    builder.setSpout("Never gonna", new NeverGonnaSpout());    
+    builder.setSpout("Never gonna",   new NeverGonnaSpout());    
     builder.setBolt ("  give you up", new GiveYouUpBolt()  )
+    
     .shuffleGrouping("Never gonna" );
     builder.setBolt ("  let you down", new LetYouDownBolt() )
+    
     .shuffleGrouping("Never gonna");
     builder.setBolt ("  run around and desert you", new RunAroundAndDesertYouBolt())
+    
     .shuffleGrouping("Never gonna");
     builder.setBolt ("  make you cry", new MakeYouCryBolt())    
+    
     .shuffleGrouping("Never gonna");
     builder.setBolt ("  say goodbye", new SayGoodbyeBolt())    
+    
     .shuffleGrouping("Never gonna");
     builder.setBolt ("  tell a lie and hurt you", new TellALieAndHurtYouBolt())    
+    
     .shuffleGrouping("Never gonna"); 
+    builder.setBolt ("  give, never gonna give", new GiveNeverGonnaGiveBolt())    
+    
+    .shuffleGrouping("Never gonna"); // give you up
     
     
     Config conf = new Config();
     conf.setDebug(true);
-    conf.setNumWorkers(2);
+    conf.setNumWorkers(5);
     conf.setDebug(false);
 
     LocalCluster cluster = new LocalCluster();
