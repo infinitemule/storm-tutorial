@@ -15,9 +15,12 @@ public class RickRollTopology {
     TopologyBuilder builder = new TopologyBuilder();  
     
     builder.setSpout("neverGonna", new NeverGonnaSpout());    
-    builder.setBolt ("giveYouUp",  new GiveYouUpBolt()).shuffleGrouping("neverGonna");
-    builder.setBolt ("letYouDown", new LetYouDownBolt()).shuffleGrouping("neverGonna");
-    
+    builder.setBolt ("giveYouUp",  new GiveYouUpBolt())
+    .shuffleGrouping("neverGonna");
+    builder.setBolt ("letYouDown", new LetYouDownBolt())
+    .shuffleGrouping("neverGonna");
+    builder.setBolt ("runAroundAndDesertYou", new RunAroundAndDesertYouBolt())
+    .shuffleGrouping("neverGonna");
     
     Config conf = new Config();
     conf.setDebug(true);

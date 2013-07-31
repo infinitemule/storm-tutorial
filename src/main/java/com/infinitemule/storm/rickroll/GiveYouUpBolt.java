@@ -6,7 +6,6 @@ package com.infinitemule.storm.rickroll;
 
 /**
  * 
- *
  */
 public class GiveYouUpBolt extends NeverGonnaFinisherBolt {
 
