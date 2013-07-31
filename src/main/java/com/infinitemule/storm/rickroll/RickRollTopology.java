@@ -25,6 +25,8 @@ public class RickRollTopology {
     .shuffleGrouping("Never gonna");
     builder.setBolt ("  say goodbye", new SayGoodbyeBolt())    
     .shuffleGrouping("Never gonna");
+    builder.setBolt ("  tell a lie and hurt you", new TellALieAndHurtYouBolt())    
+    .shuffleGrouping("Never gonna"); 
     
     
     Config conf = new Config();
