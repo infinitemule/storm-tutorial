@@ -10,7 +10,7 @@ import backtype.storm.utils.Utils;
 
 public class RickRollTopology {
 
-  public static void main(String[] args) {
+  public static void start() {
     
     TopologyBuilder builder = new TopologyBuilder();  
     
